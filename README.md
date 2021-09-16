@@ -4,7 +4,7 @@ Esta avaliação tem o objetivo de conhecer um pouco do seu conhecimento em Api 
 
 Recomendamos que você conclua o teste entre 4 - 6 horas.
 
-### Tarefas
+### Desafio
 
 Com a seguinte representação de beneficiário:
 
@@ -15,11 +15,13 @@ Com a seguinte representação de beneficiário:
 	"carteiras": [
 		{
 			"numero": "970166812",
-			"validade": "2023-01-12"
+			"validade": "2023-01-12",
+    			"ativa": true
 		},
 		{
 			"numero": "970091589",
-			"validade": "2021-02-11"
+			"validade": "2021-02-11",
+    			"ativa": false
 		}
 	],
     "ativo": true
@@ -40,15 +42,15 @@ Crie endpoints para as seguintes ações:
 
 - [ ] Toda vez que um beneficiário for recuperado por **cpf**, deverá ser tratada a propriedade **ativo**.
 
-        Um beneficiário é considerado ativo sempre que tiver uma carteira válida.
+        Um beneficiário é considerado ativo sempre que tiver uma carteira ativa com a data de validade não expirada.
 
-- [ ] Caso um beneficiário tente ser criado com um **cpf** já existente, uma mensagem deve ser lançada.
+- [ ] Caso um beneficiário tente ser criado com um **cpf** já existente, uma mensagem deve ser exibida.
 
         Dois beneficiários são considerados iguais se os seus cpfs forem iguais.
 
-- [ ] Caso um beneficiário tente ser criado com uma **carteira** já existente em outro **cpf**, uma mensagem deve ser lançada.
+- [ ] Caso um beneficiário tente ser criado com uma **carteira** já existente em outro **cpf**, uma mensagem deve ser exibida.
 
-        Dois beneficiários não podem possuir um mesmo número de **carteira**.
+        Dois beneficiários não podem possuir um mesmo número de carteira.
 
 - [ ] Ao atualizar um beneficiário, o antigo deve ser sobrescrito com o que está sendo enviado na requisição.
 
